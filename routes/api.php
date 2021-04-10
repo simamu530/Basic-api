@@ -15,6 +15,7 @@ use App\Http\Controllers\TodosController;
 |
 */
 
+Route::apiResource('/todo', TodosController::class);
 Route::get('/todo', [TodosController::class, 'get']);
 Route::post('/todo', [TodosController::class, 'addTodos']);
 Route::delete('/todo', [TodosController::class, 'delete']);
