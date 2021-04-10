@@ -18,5 +18,5 @@ use App\Http\Controllers\TodosController;
 Route::get('/todo', [TodosController::class, 'get']);
 Route::post('/todo', [TodosController::class, 'addTodos']);
 Route::delete('/todo', [TodosController::class, 'delete']);
-Route::patch(['/todo', TodosController::class, 'patch']);
+Route::patch('/todo', [TodosController::class, 'patch']);
 //deleteとpatchも追加
