@@ -22,7 +22,6 @@ class TodosController extends Controller
         $todo->title = $request->title;
         $todo->save();
         $items = Todo::all();
-        return $items;
         return response()->json([
             'message' => '追加完了'
         ], 200);
