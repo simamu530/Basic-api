@@ -22,8 +22,7 @@ class TodosController extends Controller
         $todo->title = $request->title;
         $todo->save();
         $items = Todo::all();
-        return $items;
-        return response()->json([ //returnitems削除
+        return response()->json([
             'message' => '追加完了'
         ], 200);
     } //ここにVueからのデータを受け取ったあとの処理を書く。
