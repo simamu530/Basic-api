@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use SebastianBergmann\Environment\Console;
 
 class TodosController extends Controller
 {
@@ -22,11 +23,17 @@ class TodosController extends Controller
         $todo->save();
         $items = Todo::all();
         return $items;
+        return response()->json([
+            'message' => '追加完了'
+        ], 200);
     }//ここにVueからのデータを受け取ったあとの処理を書く。
     public function deleteTodo(Request $request)
     {
         $todo = Todo::where('id',$request->id)->delete();
         $items = Todo::all();
         return $items;
+        return response()->json([
+            'message' => '削除完了'
+        ], 200);
     }
 }
