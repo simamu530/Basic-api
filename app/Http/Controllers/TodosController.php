@@ -18,7 +18,7 @@ class TodosController extends Controller
     }
     public function addTodos(Request $request)
     {
-        // $todo = new Todo;
+        $todo = new Todo;
         // $todo->title = $request->title;
         // $todo->save();
         // $items = Todo::all();
