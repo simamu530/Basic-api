@@ -19,8 +19,8 @@ class TodosController extends Controller
     public function addTodos(Request $request)
     {
         $todo = new Todo;
-        // $todo->title = $request->title;
-        // $todo->save();
+        $todo->title = $request->title;
+        $todo->save();
         // $items = Todo::all();
         return response()->json([
             'message' => '追加完了'
