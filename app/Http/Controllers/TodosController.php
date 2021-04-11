@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use SebastianBergmann\Environment\Console;
+use Illuminate\Support\Facades\DB;
 
 class TodosController extends Controller
 {
@@ -16,11 +17,16 @@ class TodosController extends Controller
             'data' => $items
         ], 200);
     }
-    public function addTodos(Request $request)
+    public function post(Request $request)
     {
-        $todo = new Todo;
-        $todo->title = $request->title;
-        $todo->save();
+        $param = [
+            "id" => 0,
+            "title" => $request->title,
+        ];
+        DB::table('todos')->insert($param);
+        // $todo = new Todo;
+        // $todo->title = $request->title;
+        // $todo->save();
         // $items = Todo::all();
         return response()->json([
             'message' => '追加完了'
