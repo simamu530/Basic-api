@@ -19,17 +19,18 @@ class TodosController extends Controller
     }
     public function post(Request $request)
     {
-        $param = [
-            "id" => 0,
-            "title" => $request->title,
-        ];
-        DB::table('todos')->insert($param);
-        // $todo = new Todo;
-        // $todo->title = $request->title;
-        // $todo->save();
-        // $items = Todo::all();
+        // $param = [
+        //     "id" => 0,
+        //     "title" => $request->title,
+        // ];
+        // DB::table('todos')->insert($param);
+        $todo = new Todo;
+        $todo->title = $request->title;
+        $todo->save();
+        $items = Todo::all();
         return response()->json([
-            'message' => '追加完了'
+            'message' => '追加完了',
+            'todos' => $items
         ], 200);
     } //ここにVueからのデータを受け取ったあとの処理を書く。
     public function deleteTodo(Request $request)
