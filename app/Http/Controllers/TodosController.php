@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class TodosController extends Controller
 {
-    public function index()
+    public function get()
     {
         $items = Todo::all();
         return response()->json([
