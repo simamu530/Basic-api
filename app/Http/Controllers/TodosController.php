@@ -30,7 +30,7 @@ class TodosController extends Controller
         $items = Todo::all();
         return response()->json([
             'message' => '追加完了',
-            'todos' => $items
+            'todo' => $todo
         ], 200);
     } //ここにVueからのデータを受け取ったあとの処理を書く。
     public function delete(Request $request)
