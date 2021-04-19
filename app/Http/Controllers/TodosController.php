@@ -37,14 +37,15 @@ class TodosController extends Controller
     {
         $todo = Todo::where('id', $request->id)->delete();
         $items = Todo::all();
-        if($todo){
-            return response()->json([
-                'message' => '削除完了',
-                'todos' => $items
-            ], 200);
-        }else{
-            return response()->json([
-                'message' => '投稿が見つかりませんでした。',
-            ], 404);}
+        return $items;
+        // if($todo){
+        //     return response()->json([
+        //         'message' => '削除完了',
+        //         'todos' => $items
+        //     ], 200);
+        // }else{
+        //     return response()->json([
+        //         'message' => '投稿が見つかりませんでした。',
+        //     ], 404);}
     }
 }
