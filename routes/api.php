@@ -18,6 +18,6 @@ use App\Http\Controllers\TodosController;
 Route::apiResource('/todo', TodosController::class);
 Route::get('/todo', [TodosController::class, 'get']);
 Route::post('/todo', [TodosController::class, 'post']);
-Route::delete('/todo', [TodosController::class, 'delete']);
+Route::post('/todo', [TodosController::class, 'del']);
 Route::patch('/todo', [TodosController::class, 'patch']);
 //deleteとpatchも追加
