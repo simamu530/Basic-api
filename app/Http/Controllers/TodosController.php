@@ -41,7 +41,7 @@ class TodosController extends Controller
         if($todo){
             return response()->json([
                 'message' => '削除完了',
-                // 'todos' => $items
+                'todos' => $todo
             ], 200);
         }else{
             return response()->json([
