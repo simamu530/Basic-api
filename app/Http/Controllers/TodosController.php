@@ -33,9 +33,9 @@ class TodosController extends Controller
             'todo' => $todo
         ], 200);
     } //ここにVueからのデータを受け取ったあとの処理を書く。
-    public function deleteTodo(Todo $todo)
+    public function deleteTodo(Request $request)
     {
-        $todo = Todo::where('id', $todo->id)->delete();
+        $todo = Todo::where('id', $request->id)->delete();
         $items = Todo::all();
         return $items;
         if($todo){
