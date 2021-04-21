@@ -36,8 +36,8 @@ class TodosController extends Controller
     public function deleteTodo(Todo $todo)
     {
         $todo = Todo::where('id', $todo->id)->delete();
-        $items = Todo::all();
-        return $items;
+        // $items = Todo::all();
+        // return $items;
         if($todo){
             return response()->json([
                 'message' => '削除完了',
