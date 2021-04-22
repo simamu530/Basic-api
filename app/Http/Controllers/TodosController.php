@@ -48,4 +48,8 @@ class TodosController extends Controller
                 'message' => '投稿が見つかりませんでした。',
             ], 404);}
     }
+    public function patch(Request $request)
+    {
+        
+    }
 }
