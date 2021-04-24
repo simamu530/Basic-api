@@ -48,7 +48,7 @@ class TodosController extends Controller
                 'message' => '投稿が見つかりませんでした。',
             ], 404);}
     }
-    public function patch(Request $request, Todo $todo)
+    public function put(Request $request, Todo $todo)
     {
         $todo = Todo::where('id', $todo->id)->first();
         $todo->title = $request->newTitle;
